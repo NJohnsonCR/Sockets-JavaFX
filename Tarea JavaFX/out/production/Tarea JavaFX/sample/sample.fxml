@@ -9,9 +9,9 @@
    <children>
       <MenuBar>
         <menus>
-          <Menu mnemonicParsing="false" text="Username">
+          <Menu mnemonicParsing="false" text="Settings">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" text="Username" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -30,7 +30,7 @@
          <children>
             <TextArea fx:id="chatClient" editable="false" prefHeight="257.0" prefWidth="461.0">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font></TextArea>
             <Button fx:id="BotonEnviar" blendMode="MULTIPLY" layoutX="360.0" layoutY="257.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="25.0" prefWidth="100.0" text="Enviar">
                <effect>
