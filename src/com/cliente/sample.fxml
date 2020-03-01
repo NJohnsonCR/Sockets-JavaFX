@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="640" maxWidth="400" minHeight="400" minWidth="640" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox maxHeight="640" maxWidth="400" minHeight="400" minWidth="640" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cliente.Controller">
    <children>
       <MenuBar>
         <menus>
@@ -28,16 +28,16 @@
       </MenuBar>
       <AnchorPane maxHeight="400.0" maxWidth="640.0" minHeight="400.0" minWidth="640.0" prefHeight="411.0" prefWidth="632.0">
          <children>
-            <TextArea fx:id="chatClient" editable="false" prefHeight="257.0" prefWidth="461.0">
+            <TextArea fx:id="chatClient" editable="false" layoutX="14.0" prefHeight="257.0" prefWidth="461.0">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font></TextArea>
-            <Button fx:id="BotonEnviar" blendMode="MULTIPLY" layoutX="360.0" layoutY="257.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="25.0" prefWidth="100.0" text="Enviar">
+            <Button fx:id="BotonEnviar" blendMode="MULTIPLY" layoutX="372.0" layoutY="257.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="25.0" prefWidth="100.0" text="Enviar">
                <effect>
                   <Blend />
                </effect>
             </Button>
-            <TextField fx:id="textClient" layoutX="-10.0" layoutY="257.0" prefHeight="25.0" prefWidth="360.0" promptText="Ingrese su texto aquì" />
+            <TextField fx:id="textClient" layoutX="14.0" layoutY="257.0" prefHeight="25.0" prefWidth="360.0" promptText="Ingrese su texto aquì" />
          </children>
       </AnchorPane>
    </children>
