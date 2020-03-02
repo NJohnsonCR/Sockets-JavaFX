@@ -14,7 +14,7 @@ public class Cliente {
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
-    public TextField textClient;
+    public TextArea chatClient;
 
     public Cliente(String address, int port){
 
@@ -26,7 +26,7 @@ public class Cliente {
 
             out = new DataOutputStream(socket.getOutputStream());
 
-            out.writeUTF(textClient.getText());
+            out.writeUTF(chatClient.getText());
 
             out.close();
 

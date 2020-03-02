@@ -16,9 +16,10 @@ public class Controller {
         } else {
             String Message;
             Message = textClient.getText();
-            //Cliente cliente = new Cliente("122.0.0.1", 6969);
             chatClient.appendText(Message + "\n");
             textClient.clear();
+            Cliente cliente = new Cliente("122.0.0.1", 6969);
+            System.out.println("Mensaje Enviado");
         }
     }
 

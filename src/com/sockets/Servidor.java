@@ -11,7 +11,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
-public class Servidor{
+public class Servidor implements Runnable{
 
     private Socket socket;
     private ServerSocket server;
@@ -20,33 +20,34 @@ public class Servidor{
     public Thread mihilo;
 
     public Servidor(int port) {
-        System.out.println("Thread corriendo...");
         try {
             server = new ServerSocket(port);
-
             System.out.println("Server started");
 
-            System.out.println("Waiting for a client");
+            System.out.println("Waiting for client");
 
-            socket = server.accept();
-            System.out.println("Client accepted");
-
-            in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-
-            String string = "";
-            while(true){
-                try{
-                    string = in.readUTF();
-                    chatServer.appendText(string);
-                    socket.close();
-
-                }catch (IOException e1){
-                    System.out.println(e1);
-                }
-            }
+            mihilo = new Thread();
+            mihilo.start();
+            System.out.println("Thread Iniciado");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);;
         }
     }
-}
 
+    @Override
+    public void run() {
+        while (true){
+            try {
+                socket = server.accept();
+                System.out.println("Client Accepted");
+                in = new DataInputStream(socket.getInputStream());
+                String mensaje = in.readUTF();
+                chatServer.appendText(mensaje + "\n");
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}
