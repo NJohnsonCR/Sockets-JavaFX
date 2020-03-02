@@ -11,38 +11,35 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
-public class Servidor implements Runnable{
-
+public class Servidor extends Thread{
+    //initialize socket and input stream
     private Socket socket;
     private ServerSocket server;
     private DataInputStream in;
     public TextArea chatServer;
-    public Thread mihilo;
 
-    public Servidor(int port) {
+    // constructor with port
+    public Servidor(int port){
         try {
             server = new ServerSocket(port);
-            System.out.println("Server started");
+            System.out.println("Servidor Comenzado...");
+            System.out.println("Esperando Cliente...");
 
-            System.out.println("Waiting for client");
 
-            mihilo = new Thread();
-            mihilo.start();
-            System.out.println("Thread Iniciado");
         } catch (IOException e) {
-            System.out.println(e);;
+            e.printStackTrace();
         }
     }
 
     @Override
     public void run() {
-        while (true){
+        while(true){
             try {
+                System.out.println("Hola");
                 socket = server.accept();
-                System.out.println("Client Accepted");
                 in = new DataInputStream(socket.getInputStream());
-                String mensaje = in.readUTF();
-                chatServer.appendText(mensaje + "\n");
+                String mensaje_texto = in.readUTF();
+                chatServer.appendText("\n" + mensaje_texto);
                 socket.close();
             } catch (IOException e) {
                 e.printStackTrace();

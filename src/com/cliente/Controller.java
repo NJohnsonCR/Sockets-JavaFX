@@ -19,6 +19,8 @@ public class Controller {
             chatClient.appendText(Message + "\n");
             textClient.clear();
             Cliente cliente = new Cliente("122.0.0.1", 6969);
+            cliente.start();
+            System.out.println("Thread Iniciado");
             System.out.println("Mensaje Enviado");
         }
     }

@@ -8,33 +8,37 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.security.MessageDigest;
 
-public class Cliente {
-
+public class Cliente extends Thread {
+    // establish a connection
     private Socket socket;
-    private DataInputStream in;
-    private DataOutputStream out;
-    public TextArea chatClient;
+    private DataInputStream  input;
+    private DataOutputStream out ;
+    public TextArea textClient;
 
     public Cliente(String address, int port){
-
-        try {
-
-            socket = new Socket(address, port);
-
-            in = new DataInputStream(System.in);
-
-            out = new DataOutputStream(socket.getOutputStream());
-
-            out.writeUTF(chatClient.getText());
-
-            out.close();
-
-        } catch (IOException e) {
-
+        try{
+            socket=new Socket(address, port);
+        }catch (IOException e){
             System.out.println(e);
         }
 
+
+    }
+    @Override
+    public void run() {
+        try {
+            out = new DataOutputStream(socket.getOutputStream());
+            out.writeUTF(textClient.getText());
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
+
+
+
+
