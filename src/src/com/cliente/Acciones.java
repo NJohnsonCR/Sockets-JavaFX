@@ -1,14 +1,14 @@
 package com.cliente;
-
 import com.sockets.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class Controller {
+public class Acciones {
+
     public TextArea chatClient;
     public TextField textClient;
 
-    public void pressButton(ActionEvent event){
+    public void EnviarMensaje(){
         if (textClient.getLength() == 0) {
             chatClient.appendText("Primero debes ingresar un texto" + "\n");
 
@@ -20,5 +20,4 @@ public class Controller {
             System.out.println("Mensaje Enviado");
         }
     }
-
 }

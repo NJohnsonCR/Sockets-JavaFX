@@ -22,7 +22,7 @@ public class Servidor extends Thread{
         // starts server and waits for a connection
         try {
             server = new ServerSocket(puerto);
-            System.out.println("Port " + puerto + " assigned");
+            System.out.println("Por" +puerto+ "assigned");
             System.out.println("Server started");
 
             System.out.println("Waiting for a client ...");
