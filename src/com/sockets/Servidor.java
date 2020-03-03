@@ -16,6 +16,7 @@ public class Servidor extends Thread{
     private Socket socket;
     private ServerSocket server;
     private DataInputStream in;
+    public TextArea chatServer;
 
 
     public Servidor(int puerto) {

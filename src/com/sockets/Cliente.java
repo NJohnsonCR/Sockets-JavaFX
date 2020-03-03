@@ -4,26 +4,33 @@ package com.sockets;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 
-public class Cliente {
+public class Cliente extends Thread {
     // initialize socket and input output streams
     private Socket socket;
     private DataInputStream input;
     private DataOutputStream out;
 
     // constructor to put ip address and port
-    public Cliente(String address, int port) {
-        // establish a connection
+    public Cliente(String address, int port){
         try {
             socket = new Socket(address, port);
             System.out.println("Connected");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void run(){
+        try {
+
             // takes input from terminal
-            input = new DataInputStream(System.in);
+            /*input = new DataInputStream(System.in);
             // sends output to the socket
-            out = new DataOutputStream(socket.getOutputStream());
+            out = new DataOutputStream(socket.getOutputStream());*/
         } catch(IOException i) {
             System.out.println(i);
         }
@@ -62,11 +69,27 @@ public class Cliente {
         }
     }
 
-    public static void main(String [] args) {
-        Cliente cliente = new Cliente("127.0.0.1", 6969);
+}
+class Paquetes implements Serializable {
+    private String ip, mensaje;
+
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 }
-
 
 
 
