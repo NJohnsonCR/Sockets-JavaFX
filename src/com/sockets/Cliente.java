@@ -1,12 +1,9 @@
 package com.sockets;
 
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.Serializable;
 import java.net.Socket;
-
 
 public class Cliente extends Thread {
     // initialize socket and input output streams
@@ -28,9 +25,9 @@ public class Cliente extends Thread {
         try {
 
             // takes input from terminal
-            /*input = new DataInputStream(System.in);
+            input = new DataInputStream(System.in);
             // sends output to the socket
-            out = new DataOutputStream(socket.getOutputStream());*/
+            out = new DataOutputStream(socket.getOutputStream());
         } catch(IOException i) {
             System.out.println(i);
         }
@@ -70,26 +67,3 @@ public class Cliente extends Thread {
     }
 
 }
-class Paquetes implements Serializable {
-    private String ip, mensaje;
-
-
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
-
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
-}
-
-
-

@@ -1,6 +1,5 @@
 package com.servidor;
 
-import com.sockets.Servidor;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

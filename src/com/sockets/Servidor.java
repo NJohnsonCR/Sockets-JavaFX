@@ -1,7 +1,6 @@
 
 package com.sockets;
 
-import com.servidor.*;
 import javafx.scene.control.TextArea;
 
 import java.io.BufferedInputStream;

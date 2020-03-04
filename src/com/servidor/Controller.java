@@ -1,7 +1,7 @@
 package com.servidor;
 
+import com.sockets.Servidor;
 import javafx.event.ActionEvent;
-import com.sockets.*;
 import javafx.scene.control.TextField;
 
 
@@ -14,7 +14,7 @@ public class Controller{
     public void ponerPuerto(ActionEvent event){
         int puerto = Integer.parseInt(IngresarPuerto.getText());
         IngresarPuerto.clear();
-        Servidor servidor = new Servidor(puerto);
+        com.sockets.Servidor servidor = new Servidor(puerto);
         servidor.start();
     }
 }

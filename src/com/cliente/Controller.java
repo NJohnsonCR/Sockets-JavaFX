@@ -1,10 +1,8 @@
 package com.cliente;
 
-import com.sockets.*;
+import com.sockets.Cliente;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-
-import java.io.Serializable;
 
 public class Controller {
     public TextArea chatClient;
