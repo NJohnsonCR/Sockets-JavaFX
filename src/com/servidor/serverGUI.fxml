@@ -38,8 +38,8 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="IngresarPuerto" layoutX="81.0" layoutY="52.0" prefHeight="25.0" prefWidth="149.0" promptText="Ingrese su puerto" />
-            <Button fx:id="OkButton" layoutX="230.0" layoutY="52.0" mnemonicParsing="false" onAction="#ponerPuerto" prefHeight="15.0" prefWidth="56.0" text="Ok" />
+            <TextField fx:id="inputPortServer" layoutX="81.0" layoutY="52.0" prefHeight="25.0" prefWidth="149.0" promptText="Ingrese su puerto" />
+            <Button fx:id="OkButton" layoutX="230.0" layoutY="52.0" mnemonicParsing="false" onAction="#writePort" prefHeight="15.0" prefWidth="56.0" text="Ok" />
          </children></AnchorPane>
    </children>
 </VBox>
