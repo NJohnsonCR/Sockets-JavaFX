@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"Tarea.JavaFX","l":"com.cliente"},{"m":"Tarea.JavaFX","l":"com.servidor"},{"m":"Tarea.JavaFX","l":"com.sockets"}]

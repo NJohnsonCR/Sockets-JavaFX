@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * public class Main calls the fmxml document serverGUI.fxml and creates the scene
+ * public class Main calls the fmxml document server.fxml and creates the scene
  */
 public class Main extends Application {
     /**
@@ -21,7 +21,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("serverGUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("server.fxml"));
         primaryStage.setTitle("Server");
         primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();

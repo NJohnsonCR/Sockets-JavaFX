@@ -1,5 +1,5 @@
 /**
- * used modularity for creating the package com.cliente
+ * used modularity for creating te
  */
 package com.cliente;
 /**
@@ -22,7 +22,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("clientGUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("client.fxml"));
         primaryStage.setTitle("Client");
         primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
